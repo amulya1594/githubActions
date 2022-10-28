@@ -8,7 +8,7 @@ on:
     inputs:
       infile:
         description: The YAML file to be updated
-        default: 'values.yaml'
+        default: 'test.yaml'
         required: false
       varlist:
         description: Comma separated list of var=value
