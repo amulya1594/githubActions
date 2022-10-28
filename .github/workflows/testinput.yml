@@ -30,7 +30,9 @@ jobs:
          python-version: '3.9'
          run: python ${{ github.action_path }}/get-yaml-value.py -i ${{ inputs.infile }} -V "${{ inputs.varlist }}" -x ${{ inputs.exclude_varname }}
          shell: bash
-
+         
+      - name: Display output   
+        run: echo ${{ steps.get-yaml-value.outputs.values }}
     
           
    
