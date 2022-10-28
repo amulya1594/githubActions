@@ -21,7 +21,7 @@ jobs:
     - name: get-yaml-value
       uses: rmeneely/get-yaml-value@v1
       with:
-        infile: test.yaml
+        infile: ./test.yaml
         varlist: runOrder,runPlanOnly
 
  
