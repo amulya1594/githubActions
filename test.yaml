@@ -1,0 +1,10 @@
+name: test
+on:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testyaml
+        runOrder: 1
+        runPlanOnly: False
