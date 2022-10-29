@@ -10,10 +10,10 @@ jobs:
     steps:
     
         - name: Read yaml file
-          uses: rmeneely/get-yaml-value@v1
+          uses: jbutcher5/read-yaml@main
           id: getyaml
           with:
-            infile: './test.yaml'
+            file: './test.yaml'
             varlist: ''
             exclude_varname: false
        
