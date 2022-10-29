@@ -13,7 +13,7 @@ jobs:
           uses: jbutcher5/read-yaml@main
           id: getyaml
           with:
-            file: './test.yaml'
+            file: './getValue.yml'
             key-path: '["runs"]'
        
         - name: Get yaml input value
