@@ -17,3 +17,4 @@ output:
   data:
     description: 'Data read from YAML file'
 
+run: echo "test=hello"
