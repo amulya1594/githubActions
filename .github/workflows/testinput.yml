@@ -14,8 +14,6 @@ jobs:
           id: getyaml
           with:
             file: './test.yaml'
-            varlist: ''
-            exclude_varname: false
             key-path: '["runs"]'
        
         - name: Get yaml input value
