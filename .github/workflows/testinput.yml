@@ -2,20 +2,20 @@ on:
  push:
   branches:
     - main
- workflow_dispatch:
-   inputs:
-     infile:
-       description: The YAML file to be updated
-       default: 'test.yaml'
-       required: false
-     varlist:
-       description: Comma separated list of var=value
-       default: ''
-       required: true
-     exclude_varname:
-       description: Exclude the variable name in the returned values. Note the values returned are in the order they are found.
-       default: false
-       required: false
+#  workflow_dispatch:
+#    inputs:
+#      infile:
+#        description: The YAML file to be updated
+#        default: 'test.yaml'
+#        required: false
+#      varlist:
+#        description: Comma separated list of var=value
+#        default: ''
+#        required: true
+#      exclude_varname:
+#        description: Exclude the variable name in the returned values. Note the values returned are in the order they are found.
+#        default: false
+#        required: false
 
 
 jobs:
@@ -23,17 +23,26 @@ jobs:
     runs-on: ubuntu-latest
     name: yaml-input    
     steps:
-      - name: Get yaml input value
-        uses: actions/setup-python@v4
-        id: get-yaml-value
-        with:
-         python-version: '3.9'
-         run: python ${{ github.action_path }}/get-yaml-value.py -i ${{ inputs.infile }} -V "${{ inputs.varlist }}" -x ${{ inputs.exclude_varname }}
-         shell: bash
+#       - name: Get yaml input value
+#         uses: actions/setup-python@v4
+#         id: get-yaml-value
+#         with:
+#          python-version: '3.9'
+#          run: python ${{ github.action_path }}/get-yaml-value.py -i ${{ inputs.infile }} -V "${{ inputs.varlist }}" -x ${{ inputs.exclude_varname }}
+#          shell: bash
          
-      - name: Display output   
-        run: echo ${{ steps.get-yaml-value.outputs.values }}
+#       - name: Display output   
+#         run: echo ${{ steps.get-yaml-value.outputs.values }}
     
+        - name: Get yaml input value
+          uses: rmeneely/get-yaml-value@v1
+          with:
+            infile: 'test.yaml'
+            varlist: ''
+            exclude_varname: false
+
+            run : echo ${{ steps.get-yaml-value.outputs.values }}
+         
           
    
      
