@@ -17,4 +17,6 @@ output:
   data:
     description: 'Data read from YAML file'
 
-runs: echo "test=hello"
+runs: 
+  steps:
+    - uses: actions/checkout@v1
