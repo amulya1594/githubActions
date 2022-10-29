@@ -6,13 +6,6 @@ jobs:
     name: Test read-yaml
     steps:
       - uses: actions/checkout@v1
-
-      - name: Run read-yaml action
-        id: using
-        uses: ./
-        with:
-          file: './action.yml'
-          key-path: '["runs", "using"]'
       
       - name: Run read-yaml action
         id: desc
@@ -23,7 +16,6 @@ jobs:
         
       - name: Get read-yaml outputs
         run: |
-          echo '${{ steps.using.outputs.data }}'
           echo '${{ steps.desc.outputs.data }}'
          
           
