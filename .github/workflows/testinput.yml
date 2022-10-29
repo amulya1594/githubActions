@@ -36,12 +36,13 @@ jobs:
     
         - name: Get yaml input value
           uses: rmeneely/get-yaml-value@v1
+          id: getyaml
           with:
-            infile: 'test.yaml'
+            infile: ./test.yaml
             varlist: ''
             exclude_varname: false
 
-            run : echo ${{ steps.get-yaml-value.outputs.values }}
+            run : echo ${{ steps.getyaml.outputs.values }}
          
           
    
