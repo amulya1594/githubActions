@@ -17,6 +17,3 @@ output:
   data:
     description: 'Data read from YAML file'
 
-runs:
-  using: 'node16'
-  main: 'dist/index.js'
